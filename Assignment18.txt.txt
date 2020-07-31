@@ -1,0 +1,26 @@
+
+Ans-1:
+
+create table CITYORDERS
+as
+select Onum, Amt, ORDERS.Snum, CUSTOMERS.Cnum, City from ORDERS, CUSTOMERS
+	where ORDERS.Cnum = CUSTOMERS.Cnum;
+    
+alter table CITYORDERS add PRIMARY KEY (Onum);
+
+
+
+
+
+
+
+
+Ans-2:
+
+ALTER TABLE cityorders ADD
+FOREIGN key(cnum) REFERENCES customers(cnum);
+
+
+ALTER TABLE copy_orders ADD
+FOREIGN key(prev) REFERENCES copy_orders(onum);
+
